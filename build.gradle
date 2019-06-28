@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'com.autonomouslogic.jacksonobjectstream'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "com.fasterxml.jackson.core:jackson-core:2.9.9"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile "com.fasterxml.jackson.core:jackson-annotations:2.9.9"
+    testCompile "com.fasterxml.jackson.core:jackson-databind:2.9.9"
+    testCompile "com.google.guava:guava:28.0-jre"
+}

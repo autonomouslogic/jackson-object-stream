@@ -1,0 +1,9 @@
+syntax: glob
+
+build/
+out/
+.gradle/
+.idea/
+VERSION
+.directory
+
