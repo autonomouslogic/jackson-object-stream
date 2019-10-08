@@ -1,9 +1,13 @@
 package com.autonomouslogic.jacksonobjectstream;
 
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Iterator;
@@ -21,7 +25,14 @@ public class JacksonObjectStreamFactoryTest {
 
 	@Before
 	public void before() {
-		factory = new JacksonObjectStreamFactory(new ObjectMapper());
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.configure(JsonParser.Feature.ALLOW_COMMENTS, true);
+		mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true);
+		mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
+		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+		mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+		mapper.configure(SerializationFeature.INDENT_OUTPUT, false);
+		factory = new JacksonObjectStreamFactory(mapper);
 	}
 
 	@Test
@@ -50,5 +61,16 @@ public class JacksonObjectStreamFactoryTest {
 			throw new FileNotFoundException(testFile);
 		}
 		return in;
+	}
+
+	@Test
+	public void shouldCreateStreamWriter() throws Exception {
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		JacksonObjectStreamWriter writer = factory.createWriter(out);
+		writer.writeObject(new TestObject(0));
+		writer.writeObject(new TestObject(1));
+		writer.writeObject(new TestObject(2));
+		writer.close();
+		assertEquals("{\"a\":0}\n{\"a\":1}\n{\"a\":2}\n", new String(out.toByteArray()));
 	}
 }

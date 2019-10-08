@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Iterator;
 
 /**
- * An iterator reading objects from a {@link java.io.InputStream}.
+ * An iterator reading JSON objects from a {@link java.io.InputStream}.
  * This is not thread-safe.
  */
 public class JacksonObjectIterator<T> implements Iterator<T> {

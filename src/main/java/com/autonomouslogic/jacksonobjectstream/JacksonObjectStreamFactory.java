@@ -1,16 +1,12 @@
 package com.autonomouslogic.jacksonobjectstream;
 
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.ObjectCodec;
+import com.fasterxml.jackson.core.*;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Iterator;
 
 /**
- *
+ * Main factory for creating stream readers and writers.
  */
 public class JacksonObjectStreamFactory {
 	private final ObjectCodec objectCodec;
@@ -21,11 +17,49 @@ public class JacksonObjectStreamFactory {
 		jsonFactory = objectCodec.getFactory();
 	}
 
-	public <T> Iterator<T> createIterator(InputStream in, Class<T> type) throws JsonParseException, IOException {
-		return createIterator(jsonFactory.createParser(in), type);
+	public <T> Iterator<T> createIterator(File file, Class<T> type) throws IOException, JsonParseException {
+		return createIterator(file, 8192, type);
+	}
+
+	public <T> Iterator<T> createIterator(File file, int bufferSize, Class<T> type) throws IOException, JsonParseException {
+		return createIterator(new BufferedInputStream(new FileInputStream(file), bufferSize), type);
+	}
+
+	public <T> Iterator<T> createIterator(InputStream in, Class<T> type) throws IOException, JsonParseException {
+		JsonParser parser = createJsonParser(in);
+		return createIterator(parser, type);
 	}
 
 	public <T> Iterator<T> createIterator(JsonParser parser, Class<T> type) {
 		return new JacksonObjectIterator<>(parser, type, objectCodec);
 	}
+
+	public JsonParser createJsonParser(InputStream in) throws IOException, JsonParseException {
+		return jsonFactory.createParser(in);
+	}
+
+	public JacksonObjectStreamWriter createWriter(File file) throws FileNotFoundException, IOException {
+		return createWriter(file, 8192);
+	}
+
+	public JacksonObjectStreamWriter createWriter(File file, int bufferSize) throws FileNotFoundException, IOException {
+		return createWriter(new BufferedOutputStream(new FileOutputStream(file), bufferSize));
+	}
+
+	public JacksonObjectStreamWriter createWriter(OutputStream out) throws IOException {
+		Writer writer = new OutputStreamWriter(out);
+		JsonGenerator generator = createGenerator(writer);
+		return createWriter(generator, writer);
+	}
+
+	public JacksonObjectStreamWriter createWriter(JsonGenerator generator, Writer writer) {
+		return new JacksonObjectStreamWriter(objectCodec, generator, writer);
+	}
+
+	public JsonGenerator createGenerator(Writer writer) throws IOException {
+		JsonGenerator generator = jsonFactory.createGenerator(new UnclosableWriter(writer));
+		generator.setRootValueSeparator(null);
+		return generator;
+	}
+
 }
