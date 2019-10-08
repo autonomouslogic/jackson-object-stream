@@ -1,9 +1,19 @@
 plugins {
-    id 'java'
+    id "java"
 }
 
-group 'com.autonomouslogic.jacksonobjectstream'
-version '1.0-SNAPSHOT'
+group "com.autonomouslogic.jacksonobjectstream"
+
+def getVersion = { ->
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine './bin/version.sh'
+        standardOutput = stdout
+    }
+    return stdout.toString().trim()
+}
+
+version = getVersion()
 
 sourceCompatibility = 1.8
 
