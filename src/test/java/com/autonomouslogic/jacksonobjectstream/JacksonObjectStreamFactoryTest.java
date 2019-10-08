@@ -1,9 +1,6 @@
 package com.autonomouslogic.jacksonobjectstream;
 
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -24,14 +21,7 @@ public class JacksonObjectStreamFactoryTest {
 
 	@Before
 	public void before() {
-		ObjectMapper mapper = new ObjectMapper();
-		mapper.configure(JsonParser.Feature.ALLOW_COMMENTS, true);
-		mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true);
-		mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
-		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-		mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
-		mapper.configure(SerializationFeature.INDENT_OUTPUT, false);
-		factory = new JacksonObjectStreamFactory(mapper);
+		factory = new JacksonObjectStreamFactory(new ObjectMapper());
 	}
 
 	@Test
