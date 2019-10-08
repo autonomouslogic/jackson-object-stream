@@ -14,5 +14,3 @@ else
 fi
 
 echo $VERSION
-(cd $DIR/.. ; npm version "$VERSION")
-echo -n $VERSION > $DIR/../VERSION
