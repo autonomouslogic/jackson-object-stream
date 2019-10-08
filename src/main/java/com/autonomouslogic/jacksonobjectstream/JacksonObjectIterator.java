@@ -3,6 +3,7 @@ package com.autonomouslogic.jacksonobjectstream;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.ObjectCodec;
 
+import java.io.Closeable;
 import java.io.IOException;
 import java.util.Iterator;
 
@@ -10,7 +11,7 @@ import java.util.Iterator;
  * An iterator reading JSON objects from a {@link java.io.InputStream}.
  * This is not thread-safe.
  */
-public class JacksonObjectIterator<T> implements Iterator<T> {
+public class JacksonObjectIterator<T> implements Iterator<T>, Closeable, AutoCloseable {
 	private final ObjectCodec codec;
 	private final Class<T> type;
 	private final JsonParser parser;
@@ -61,5 +62,10 @@ public class JacksonObjectIterator<T> implements Iterator<T> {
 		catch (IOException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	@Override
+	public void close() throws IOException {
+		parser.close();
 	}
 }

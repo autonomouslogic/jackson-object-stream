@@ -3,7 +3,6 @@ package com.autonomouslogic.jacksonobjectstream;
 import com.fasterxml.jackson.core.*;
 
 import java.io.*;
-import java.util.Iterator;
 
 /**
  * Main factory for creating stream readers and writers.
@@ -17,20 +16,20 @@ public class JacksonObjectStreamFactory {
 		jsonFactory = objectCodec.getFactory();
 	}
 
-	public <T> Iterator<T> createIterator(File file, Class<T> type) throws IOException, JsonParseException {
+	public <T> JacksonObjectIterator<T> createIterator(File file, Class<T> type) throws IOException, JsonParseException {
 		return createIterator(file, 8192, type);
 	}
 
-	public <T> Iterator<T> createIterator(File file, int bufferSize, Class<T> type) throws IOException, JsonParseException {
+	public <T> JacksonObjectIterator<T> createIterator(File file, int bufferSize, Class<T> type) throws IOException, JsonParseException {
 		return createIterator(new BufferedInputStream(new FileInputStream(file), bufferSize), type);
 	}
 
-	public <T> Iterator<T> createIterator(InputStream in, Class<T> type) throws IOException, JsonParseException {
+	public <T> JacksonObjectIterator<T> createIterator(InputStream in, Class<T> type) throws IOException, JsonParseException {
 		JsonParser parser = createJsonParser(in);
 		return createIterator(parser, type);
 	}
 
-	public <T> Iterator<T> createIterator(JsonParser parser, Class<T> type) {
+	public <T> JacksonObjectIterator<T> createIterator(JsonParser parser, Class<T> type) {
 		return new JacksonObjectIterator<>(parser, type, objectCodec);
 	}
 
