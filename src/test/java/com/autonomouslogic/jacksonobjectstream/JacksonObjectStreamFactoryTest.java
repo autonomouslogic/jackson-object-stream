@@ -27,18 +27,20 @@ public class JacksonObjectStreamFactoryTest {
 	@Test
 	public void shouldCreateIteratorsFromClassSpec() throws Exception {
 		for (String testFile : testFiles) {
+			String fmsg = "file:" + testFile;
+			System.out.println(fmsg);
 			Iterator<TestObject> iterator = factory.createIterator(openTestFile(testFile), TestObject.class);
-			assertNotNull(testFile, iterator);
+			assertNotNull(fmsg, iterator);
 			for (int i = 0; i < 4; i++) {
-				String msg = testFile + ":" + i;
-				System.out.println(msg);
-				assertTrue(msg, iterator.hasNext());
+				String imsg = fmsg + ",i:" + i;
+				System.out.println(imsg);
+				assertTrue(imsg, iterator.hasNext());
 				TestObject obj = iterator.next();
-				assertNotNull(msg, obj);
-				assertEquals(msg, i, obj.a);
+				assertNotNull(imsg, obj);
+				assertEquals(imsg, i, obj.a);
 			}
-			assertFalse(testFile, iterator.hasNext());
-			assertNull(testFile, iterator.next());
+			assertFalse(fmsg, iterator.hasNext());
+			assertNull(fmsg, iterator.next());
 		}
 	}
 

@@ -8,6 +8,7 @@ import java.util.Iterator;
 
 /**
  * An iterator reading objects from a {@link java.io.InputStream}.
+ * This is not thread-safe.
  */
 public class JacksonObjectIterator<T> implements Iterator<T> {
 	private final ObjectCodec codec;
@@ -23,6 +24,13 @@ public class JacksonObjectIterator<T> implements Iterator<T> {
 	}
 
 	private void loadNext() throws IOException {
+		next = null;
+		if (parser.isClosed()) {
+			return;
+		}
+		if (parser.nextToken() == null) {
+			return;
+		}
 		next = codec.readValue(parser, type);
 		objectLoaded = true;
 	}
@@ -36,7 +44,7 @@ public class JacksonObjectIterator<T> implements Iterator<T> {
 			return next != null;
 		}
 		catch (IOException e) {
-			throw new RuntimeException(e);
+			throw new RuntimeException("Failed loading next object from stream", e);
 		}
 	}
 
