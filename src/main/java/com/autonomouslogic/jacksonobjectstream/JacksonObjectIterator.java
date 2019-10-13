@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.ObjectCodec;
 
 import java.io.Closeable;
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.util.Iterator;
 
 /**
@@ -60,7 +61,7 @@ public class JacksonObjectIterator<T> implements Iterator<T>, Closeable, AutoClo
 			return obj;
 		}
 		catch (IOException e) {
-			throw new RuntimeException(e);
+			throw new UncheckedIOException(e);
 		}
 	}
 
