@@ -10,7 +10,8 @@ Any whitespace or formatting will be ignored by Jackson, so there are no special
 ```java
 JacksonObjectStreamFactory factory = new JacksonObjectStreamFactory(new ObjectMapper());
 try (JacksonObjectIterator<User> iterator = factory.createIterator(new File("users.json"), User.class)) {
-    for (User user : iterator) {
+    while(iterator.hasNext()) {
+        User user = iterator.next();
     	// Use user for something.
     }
 }
