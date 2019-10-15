@@ -1,6 +1,11 @@
 package com.autonomouslogic.jacksonobjectstream;
 
-import com.fasterxml.jackson.core.*;
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.MappingIterator;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
 
@@ -8,29 +13,30 @@ import java.io.*;
  * Main factory for creating stream readers and writers.
  */
 public class JacksonObjectStreamFactory {
-	private final ObjectCodec objectCodec;
+	private final ObjectMapper objectMapper;
 	private final JsonFactory jsonFactory;
 
-	public JacksonObjectStreamFactory(ObjectCodec objectCodec) {
-		this.objectCodec = objectCodec;
-		jsonFactory = objectCodec.getFactory();
+	public JacksonObjectStreamFactory(ObjectMapper objectMapper) {
+		this.objectMapper = objectMapper;
+		jsonFactory = objectMapper.getFactory();
 	}
 
-	public <T> JacksonObjectIterator<T> createIterator(File file, Class<T> type) throws IOException, JsonParseException {
-		return createIterator(file, 8192, type);
+	public <T> JacksonObjectIterator<T> createReader(File file, Class<T> type) throws IOException, JsonParseException {
+		return createReader(file, 8192, type);
 	}
 
-	public <T> JacksonObjectIterator<T> createIterator(File file, int bufferSize, Class<T> type) throws IOException, JsonParseException {
-		return createIterator(new BufferedInputStream(new FileInputStream(file), bufferSize), type);
+	public <T> JacksonObjectIterator<T> createReader(File file, int bufferSize, Class<T> type) throws IOException, JsonParseException {
+		return createReader(new BufferedInputStream(new FileInputStream(file), bufferSize), type);
 	}
 
-	public <T> JacksonObjectIterator<T> createIterator(InputStream in, Class<T> type) throws IOException, JsonParseException {
+	public <T> JacksonObjectIterator<T> createReader(InputStream in, Class<T> type) throws IOException, JsonParseException {
 		JsonParser parser = createJsonParser(in);
-		return createIterator(parser, type);
+		return createReader(parser, type);
 	}
 
-	public <T> JacksonObjectIterator<T> createIterator(JsonParser parser, Class<T> type) {
-		return new JacksonObjectIterator<>(parser, type, objectCodec);
+	public <T> JacksonObjectIterator<T> createReader(JsonParser parser, Class<T> type) throws IOException {
+		MappingIterator<T> mappingIterator = objectMapper.readerFor(type).readValues(parser);
+		return new JacksonObjectIterator<>(mappingIterator);
 	}
 
 	public JsonParser createJsonParser(InputStream in) throws IOException, JsonParseException {
@@ -52,7 +58,7 @@ public class JacksonObjectStreamFactory {
 	}
 
 	public JacksonObjectStreamWriter createWriter(JsonGenerator generator, Writer writer) {
-		return new JacksonObjectStreamWriter(objectCodec, generator, writer);
+		return new JacksonObjectStreamWriter(objectMapper, generator, writer);
 	}
 
 	public JsonGenerator createGenerator(Writer writer) throws IOException {

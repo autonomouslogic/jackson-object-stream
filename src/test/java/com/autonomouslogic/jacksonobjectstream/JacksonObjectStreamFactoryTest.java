@@ -7,6 +7,7 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.NoSuchElementException;
 
 import static org.junit.Assert.*;
 
@@ -29,7 +30,7 @@ public class JacksonObjectStreamFactoryTest {
 		for (String testFile : testFiles) {
 			String fmsg = "file:" + testFile;
 			System.out.println(fmsg);
-			try (JacksonObjectIterator<TestObject> iterator = factory.createIterator(openTestFile(testFile), TestObject.class)) {
+			try (JacksonObjectIterator<TestObject> iterator = factory.createReader(openTestFile(testFile), TestObject.class)) {
 				assertNotNull(fmsg, iterator);
 				for (int i = 0; i < 4; i++) {
 					String imsg = fmsg + ",i:" + i;
@@ -40,7 +41,13 @@ public class JacksonObjectStreamFactoryTest {
 					assertEquals(imsg, i, obj.a);
 				}
 				assertFalse(fmsg, iterator.hasNext());
-				assertNull(fmsg, iterator.next());
+				try {
+					iterator.next();
+					fail("No exception.");
+				}
+				catch (NoSuchElementException e) {
+					assertNotNull(e);
+				}
 			}
 		}
 	}
