@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
+import java.nio.file.Path;
 
 /**
  * Main factory for creating stream readers and writers.
@@ -29,8 +30,20 @@ public class JacksonObjectStreamFactory {
 		return createReader(new BufferedInputStream(new FileInputStream(file), bufferSize), type);
 	}
 
+	public <T> JacksonObjectIterator<T> createReader(Path path, Class<T> type) throws IOException, JsonParseException {
+		return createReader(path.toFile(), type);
+	}
+
+	public <T> JacksonObjectIterator<T> createReader(Path path, int bufferSize, Class<T> type) throws IOException, JsonParseException {
+		return createReader(path.toFile(), bufferSize, type);
+	}
+
 	public <T> JacksonObjectIterator<T> createReader(InputStream in, Class<T> type) throws IOException, JsonParseException {
-		JsonParser parser = createJsonParser(in);
+		return createReader(new InputStreamReader(in), type);
+	}
+
+	public <T> JacksonObjectIterator<T> createReader(Reader reader, Class<T> type) throws IOException, JsonParseException {
+		JsonParser parser = createJsonParser(reader);
 		return createReader(parser, type);
 	}
 
@@ -39,8 +52,16 @@ public class JacksonObjectStreamFactory {
 		return new JacksonObjectIterator<>(mappingIterator);
 	}
 
-	public JsonParser createJsonParser(InputStream in) throws IOException, JsonParseException {
-		return jsonFactory.createParser(in);
+	public JsonParser createJsonParser(Reader reader) throws IOException, JsonParseException {
+		return jsonFactory.createParser(reader);
+	}
+
+	public JacksonObjectStreamWriter createWriter(Path path) throws FileNotFoundException, IOException {
+		return createWriter(path.toFile());
+	}
+
+	public JacksonObjectStreamWriter createWriter(Path path, int bufferSize) throws FileNotFoundException, IOException {
+		return createWriter(path.toFile(), bufferSize);
 	}
 
 	public JacksonObjectStreamWriter createWriter(File file) throws FileNotFoundException, IOException {
@@ -52,7 +73,10 @@ public class JacksonObjectStreamFactory {
 	}
 
 	public JacksonObjectStreamWriter createWriter(OutputStream out) throws IOException {
-		Writer writer = new OutputStreamWriter(out);
+		return createWriter(new OutputStreamWriter(out));
+	}
+
+	public JacksonObjectStreamWriter createWriter(Writer writer) throws IOException {
 		JsonGenerator generator = createGenerator(writer);
 		return createWriter(generator, writer);
 	}
