@@ -68,6 +68,6 @@ public class JacksonObjectStreamFactoryTest {
 			writer.writeObject(new TestObject(1));
 			writer.writeObject(new TestObject(2));
 		}
-		assertEquals("{\"a\":0}\n{\"a\":1}\n{\"a\":2}\n", new String(out.toByteArray()));
+		assertEquals("{\"a\":0}\n{\"a\":1}\n{\"a\":2}", new String(out.toByteArray()));
 	}
 }

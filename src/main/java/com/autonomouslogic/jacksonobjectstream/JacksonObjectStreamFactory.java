@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.io.SerializedString;
 import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -14,6 +15,8 @@ import java.nio.file.Path;
  * Main factory for creating stream readers and writers.
  */
 public class JacksonObjectStreamFactory {
+	private static final SerializedString NEWLINE_SEPARATOR = new SerializedString("\n");
+
 	private final ObjectMapper objectMapper;
 	private final JsonFactory jsonFactory;
 
@@ -87,7 +90,7 @@ public class JacksonObjectStreamFactory {
 
 	public JsonGenerator createGenerator(Writer writer) throws IOException {
 		JsonGenerator generator = jsonFactory.createGenerator(new UnclosableWriter(writer));
-		generator.setRootValueSeparator(null);
+		generator.setRootValueSeparator(NEWLINE_SEPARATOR);
 		return generator;
 	}
 

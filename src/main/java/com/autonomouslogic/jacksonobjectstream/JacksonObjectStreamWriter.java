@@ -24,7 +24,6 @@ public class JacksonObjectStreamWriter implements Closeable, AutoCloseable {
 
 	public void writeObject(Object obj) throws IOException {
 		codec.writeValue(generator, obj);
-		writer.write('\n');
 	}
 
 	@Override
