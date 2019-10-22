@@ -6,6 +6,8 @@ import com.fasterxml.jackson.core.ObjectCodec;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.Iterator;
+import java.util.stream.Stream;
 
 /**
  * Writes JSON objects to an output stream using Jackson.
@@ -24,6 +26,22 @@ public class JacksonObjectStreamWriter implements Closeable, AutoCloseable {
 
 	public void writeObject(Object obj) throws IOException {
 		codec.writeValue(generator, obj);
+	}
+
+	public void writeAll(Iterable<?> iterable) throws IOException {
+		for (Object o : iterable) {
+			writeObject(o);
+		}
+	}
+
+	public void writeAll(Iterator<?> iterator) throws IOException {
+		while (iterator.hasNext()) {
+			writeObject(iterator.next());
+		}
+	}
+
+	public void writeAll(Stream<?> stream) throws IOException {
+		writeAll(stream.iterator());
 	}
 
 	@Override
