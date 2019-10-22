@@ -89,7 +89,7 @@ public class JacksonObjectStreamFactory {
 	}
 
 	public JsonGenerator createGenerator(Writer writer) throws IOException {
-		JsonGenerator generator = jsonFactory.createGenerator(new UnclosableWriter(writer));
+		JsonGenerator generator = jsonFactory.createGenerator(writer);
 		generator.setRootValueSeparator(NEWLINE_SEPARATOR);
 		return generator;
 	}
