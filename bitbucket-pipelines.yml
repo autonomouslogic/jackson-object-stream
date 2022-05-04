@@ -30,4 +30,4 @@ pipelines:
           script:
             - ./bin/init-gpg.sh
             - ./gradlew properties | grep version
-            - ./gradlew publishToSonatype closeSonatypeStagingRepository
+            - ./gradlew publishToSonatype closeAndReleaseSonatypeStagingRepository
