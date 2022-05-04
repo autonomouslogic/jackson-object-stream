@@ -1,0 +1,31 @@
+options:
+  max-time: 20
+pipelines:
+  default:
+    - step: &test
+        name: Test
+        image: openjdk:11-jdk-buster
+        caches:
+          - gradle
+        script:
+          - ./gradlew test integrationTest
+#  branches:
+#    main:
+#      - step: *test
+#      - step:
+#          name: Release
+#          image: node:16
+#          script:
+#            - git describe --exact-match && exit
+#            - npx standard-version
+#            - git push --follow-tags
+#  tags:
+#    "*":
+#      - step:
+#          name: Publish
+#          deployment: Production
+#          image: openjdk:11-jdk-buster
+#          caches:
+#            - gradle
+#          script:
+#            - echo Release
