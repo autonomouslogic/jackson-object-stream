@@ -21,7 +21,7 @@ dependencies {
 
     testImplementation "junit:junit:4.12"
     testImplementation "com.fasterxml.jackson.core:jackson-annotations:2.9.9"
-    testImplementation "com.google.guava:guava:28.0-jre"
+    testImplementation "com.google.guava:guava:31.1-jre"
 }
 
 test {
