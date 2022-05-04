@@ -56,3 +56,6 @@ try (JacksonObjectStreamWriter writer = factory.createWriter(new File("users.jso
 Jackson does support writing JSON to files.
 This is a tiny library that simply provides the plumbing needed to do so effectively, and provides a few convenience
 methods at the same time.
+
+## License
+This library is licensed under the [MIT-0 license](https://spdx.org/licenses/MIT-0.html).

@@ -82,8 +82,8 @@ uploadArchives {
 
                 licenses {
                     license {
-                        name "The Apache License, Version 2.0"
-                        url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                        name "MIT-0"
+                        url "https://spdx.org/licenses/MIT-0.html"
                     }
                 }
 
