@@ -8,7 +8,7 @@ pipelines:
         caches:
           - gradle
         script:
-          - ./gradlew test integrationTest
+          - ./gradlew test
 #  branches:
 #    main:
 #      - step: *test
