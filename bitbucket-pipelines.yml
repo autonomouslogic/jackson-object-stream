@@ -11,23 +11,30 @@ pipelines:
           - ./gradlew test
   branches:
     main:
-      - step: *test
+#      - step: *test
       - step:
-          name: Release
-          image: node:16
-          script:
-            - git describe --exact-match && exit
-            - npx standard-version
-            - git push --follow-tags
-  tags:
-    "*":
-      - step:
-          name: Publish
-          deployment: Production
+          name: Release (test)
           image: openjdk:11-jdk-buster
-          caches:
-            - gradle
           script:
             - ./bin/init-gpg.sh
             - ./gradlew properties | grep version
             - ./gradlew publishToSonatype
+#      - step:
+#          name: Release
+#          image: node:16
+#          script:
+#            - git describe --exact-match && exit
+#            - npx standard-version
+#            - git push --follow-tags
+#  tags:
+#    "*":
+#      - step:
+#          name: Publish
+#          deployment: Production
+#          image: openjdk:11-jdk-buster
+#          caches:
+#            - gradle
+#          script:
+#            - ./bin/init-gpg.sh
+#            - ./gradlew properties | grep version
+#            - ./gradlew publishToSonatype
