@@ -14,7 +14,7 @@ pipelines:
       - step: *test
       - step:
           name: Release
-          image: node:16
+          image: node:18
           script:
             - git describe --exact-match && exit
             - npx standard-version
