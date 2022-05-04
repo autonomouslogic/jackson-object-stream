@@ -2,10 +2,12 @@ plugins {
     id "java"
     id "idea"
     id "org.danilopianini.git-sensitive-semantic-versioning-gradle-plugin" version "0.3.11"
+    id "maven-publish"
+    id "signing"
+    id "io.github.gradle-nexus.publish-plugin" version "1.1.0"
 }
 
 group "com.autonomouslogic.jacksonobjectstream"
-
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -43,54 +45,48 @@ task javadocJar(type: Jar) {
     from javadoc
 }
 
-//artifacts {
-//    archives jar, sourcesJar, javadocJar
-//}
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
 
-//signing {
-//    sign configurations.archives
-//}
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            pom {
+                name = "Jackson Object Stream"
+                description = "Simple streaming of JSON-encoded objects."
+                url = "https://bitbucket.org/autonomouslogic/jackson-object-stream"
+                licenses {
+                    license {
+                        name = "MIT-0"
+                        url = "https://spdx.org/licenses/MIT-0.html"
+                    }
+                }
+                developers {
+                    developer {
+                        id = "kennethjor"
+                        name = "Kenneth Jørgensen"
+                        email = "kenneth@autonomouslogic.com"
+                    }
+                }
+                scm {
+                    connection = "scm:git:git://bitbucket.org:autonomouslogic/jackson-object-stream.git"
+                    developerConnection = "scm:git:ssh://bitbucket.org:autonomouslogic/jackson-object-stream.git"
+                    url = "https://bitbucket.org/autonomouslogic/jackson-object-stream"
+                }
+            }
+            from(components.java)
+        }
+    }
+}
 
-//uploadArchives {
-//    repositories {
-//        mavenDeployer {
-//            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-//
-//            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-//                authentication(userName: ossrhUsername, password: ossrhPassword)
-//            }
-//
-//            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-//                authentication(userName: ossrhUsername, password: ossrhPassword)
-//            }
-//
-//            pom.project {
-//                name "Jackson Object Stream"
-//                packaging "jar"
-//                description "Simple streaming of JSON-encoded objects."
-//                url "https://bitbucket.org/autonomouslogic/jackson-object-stream"
-//
-//                scm {
-//                    connection "scm:hg:https://bitbucket.org/autonomouslogic/jackson-object-stream"
-//                    developerConnection "scm:hg:https://bitbucket.org/autonomouslogic/jackson-object-stream"
-//                    url "https://bitbucket.org/autonomouslogic/jackson-object-stream"
-//                }
-//
-//                licenses {
-//                    license {
-//                        name "MIT-0"
-//                        url "https://spdx.org/licenses/MIT-0.html"
-//                    }
-//                }
-//
-//                developers {
-//                    developer {
-//                        id "kennethjor"
-//                        name "Kenneth Jorgensen"
-//                        email "kenneth@autonomouslogic.com"
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
+signing {
+    sign publishing.publications.mavenJava
+}
+
+nexusPublishing {
+    repositories {
+        sonatype()
+    }
+}
