@@ -13,6 +13,10 @@
   "prHourlyLimit": 0,
   "packageRules": [
     {
+      "matchPackageNames": ["openjdk"],
+      "allowedVersions": "<=11"
+    },
+    {
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     }
