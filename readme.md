@@ -1,5 +1,6 @@
 # Jackson Object Stream
 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/autonomouslogic/jackson-object-stream)
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/autonomouslogic/jackson-object-stream/Test/main)
 ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/autonomouslogic/jackson-object-stream?style=flat-square)
 ![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/maven/com.autonomouslogic.jacksonobjectstream:jackson-object-stream)
