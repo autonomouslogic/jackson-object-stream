@@ -1,10 +1,10 @@
 # Jackson Object Stream
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/autonomouslogic/jackson-object-stream)
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/autonomouslogic/jackson-object-stream/Test/main)
-![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/autonomouslogic/jackson-object-stream?style=flat-square)
-![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/maven/com.autonomouslogic.jacksonobjectstream:jackson-object-stream)
-![GitHub](https://img.shields.io/github/license/autonomouslogic/jackson-object-stream)
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/autonomouslogic/jackson-object-stream/Test/main)](https://github.com/autonomouslogic/jackson-object-stream/actions)
+[![Known Vulnerabilities](https://snyk.io/test/github/autonomouslogic/jackson-object-stream/badge.svg)](https://snyk.io/test/github/autonomouslogic/jackson-object-stream)
+[![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/maven/com.autonomouslogic.jacksonobjectstream:jackson-object-stream)](https://libraries.io/maven/com.autonomouslogic.jacksonobjectstream:jackson-object-stream)
+[![GitHub](https://img.shields.io/github/license/autonomouslogic/jackson-object-stream)](https://spdx.org/licenses/MIT-0.html)
 
 A small library which handles reading and writing a series of JSON objects from a text file.
 
