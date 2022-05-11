@@ -2,8 +2,6 @@
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/autonomouslogic/jackson-object-stream)
 [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/autonomouslogic/jackson-object-stream/Test/main)](https://github.com/autonomouslogic/jackson-object-stream/actions)
-[![Known Vulnerabilities](https://snyk.io/test/github/autonomouslogic/jackson-object-stream/badge.svg)](https://snyk.io/test/github/autonomouslogic/jackson-object-stream)
-[![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/maven/com.autonomouslogic.jacksonobjectstream:jackson-object-stream)](https://libraries.io/maven/com.autonomouslogic.jacksonobjectstream:jackson-object-stream)
 [![GitHub](https://img.shields.io/github/license/autonomouslogic/jackson-object-stream)](https://spdx.org/licenses/MIT-0.html)
 
 A small library which handles reading and writing a series of JSON objects from a text file.
@@ -65,3 +63,11 @@ methods at the same time.
 
 ## License
 This library is licensed under the [MIT-0 license](https://spdx.org/licenses/MIT-0.html).
+
+## External
+[![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/autonomouslogic/jackson-object-stream.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/autonomouslogic/jackson-object-stream/context:java)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/autonomouslogic/jackson-object-stream.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/autonomouslogic/jackson-object-stream/alerts/)
+
+[![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/maven/com.autonomouslogic.jacksonobjectstream:jackson-object-stream)](https://libraries.io/maven/com.autonomouslogic.jacksonobjectstream:jackson-object-stream)
+
+[![Known Vulnerabilities](https://snyk.io/test/github/autonomouslogic/jackson-object-stream/badge.svg)](https://snyk.io/test/github/autonomouslogic/jackson-object-stream)
