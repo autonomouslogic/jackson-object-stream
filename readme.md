@@ -73,6 +73,8 @@ This library is licensed under the [MIT-0 license](https://spdx.org/licenses/MIT
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/57ccd157859e66c8ad84/maintainability)](https://codeclimate.com/github/autonomouslogic/jackson-object-stream/maintainability)
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=autonomouslogic_jackson-object-stream&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=autonomouslogic_jackson-object-stream)
+
 [![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/maven/com.autonomouslogic.jacksonobjectstream:jackson-object-stream)](https://libraries.io/maven/com.autonomouslogic.jacksonobjectstream:jackson-object-stream)
 
 [![Known Vulnerabilities](https://snyk.io/test/github/autonomouslogic/jackson-object-stream/badge.svg)](https://snyk.io/test/github/autonomouslogic/jackson-object-stream)
