@@ -71,6 +71,8 @@ This library is licensed under the [MIT-0 license](https://spdx.org/licenses/MIT
 [![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/autonomouslogic/jackson-object-stream.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/autonomouslogic/jackson-object-stream/context:java)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/autonomouslogic/jackson-object-stream.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/autonomouslogic/jackson-object-stream/alerts/)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/57ccd157859e66c8ad84/maintainability)](https://codeclimate.com/github/autonomouslogic/jackson-object-stream/maintainability)
+
 [![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/maven/com.autonomouslogic.jacksonobjectstream:jackson-object-stream)](https://libraries.io/maven/com.autonomouslogic.jacksonobjectstream:jackson-object-stream)
 
 [![Known Vulnerabilities](https://snyk.io/test/github/autonomouslogic/jackson-object-stream/badge.svg)](https://snyk.io/test/github/autonomouslogic/jackson-object-stream)
