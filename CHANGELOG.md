@@ -1,5 +1,12 @@
 Jackson Object Stream
 
+## [0.2.8](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.7...0.2.8) (2022-07-14)
+
+
+### Miscellaneous Chores
+
+* **deps:** update plugin org.danilopianini.git-sensitive-semantic-versioning-gradle-plugin to v0.3.15 ([#7](https://github.com/autonomouslogic/jackson-object-stream/issues/7)) ([19a9385](https://github.com/autonomouslogic/jackson-object-stream/commit/19a9385d0a2ae90edf51b9cdc8b7b9bf5d53aa79))
+
 ## [0.2.7](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.6...0.2.7) (2022-07-08)
 
 
