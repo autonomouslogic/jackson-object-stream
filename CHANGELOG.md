@@ -1,5 +1,12 @@
 Jackson Object Stream
 
+## [0.2.9](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.8...0.2.9) (2022-07-15)
+
+
+### Miscellaneous Chores
+
+* **deps:** update all non-major dependencies ([#8](https://github.com/autonomouslogic/jackson-object-stream/issues/8)) ([6d92435](https://github.com/autonomouslogic/jackson-object-stream/commit/6d924359fcce319dc7bed7041894b6fbc153e070))
+
 ## [0.2.8](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.7...0.2.8) (2022-07-14)
 
 
