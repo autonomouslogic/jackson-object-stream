@@ -18,7 +18,8 @@
     },
     {
       "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
+      "automerge": true,
+      "schedule": ["every monday"]
     }
   ]
 }
