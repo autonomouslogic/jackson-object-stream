@@ -1,5 +1,17 @@
 Jackson Object Stream
 
+## [0.2.10](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.9...0.2.10) (2022-08-02)
+
+
+### Continuous Integration
+
+* Limited minor updates to Mondays [skip ci] ([d798b53](https://github.com/autonomouslogic/jackson-object-stream/commit/d798b53af275f9bddba7cc93e2223c1601286423))
+
+
+### Miscellaneous Chores
+
+* **deps:** update plugin org.danilopianini.git-sensitive-semantic-versioning-gradle-plugin to v0.3.17 ([#9](https://github.com/autonomouslogic/jackson-object-stream/issues/9)) ([acff366](https://github.com/autonomouslogic/jackson-object-stream/commit/acff36604b447ba96ab715c7cdc7b8413237f052))
+
 ## [0.2.9](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.8...0.2.9) (2022-07-15)
 
 
