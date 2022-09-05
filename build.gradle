@@ -18,10 +18,10 @@ repositories {
 }
 
 dependencies {
-    implementation "com.fasterxml.jackson.core:jackson-databind:2.13.3"
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.13.4"
 
     testImplementation "junit:junit:4.13.2"
-    testImplementation "com.fasterxml.jackson.core:jackson-annotations:2.13.3"
+    testImplementation "com.fasterxml.jackson.core:jackson-annotations:2.13.4"
     testImplementation "com.google.guava:guava:31.1-jre"
 }
 
