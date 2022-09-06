@@ -1,5 +1,18 @@
 Jackson Object Stream
 
+## [0.2.12](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.11...0.2.12) (2022-09-06)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies to v2.13.4 ([#11](https://github.com/autonomouslogic/jackson-object-stream/issues/11)) ([4e02719](https://github.com/autonomouslogic/jackson-object-stream/commit/4e02719e559b70ecd27383d0c0c983ef22318eae))
+
+
+### Continuous Integration
+
+* Disabled auto-releases on dependency updates. ([f472797](https://github.com/autonomouslogic/jackson-object-stream/commit/f472797a162c37212c30c3dc4b674eea26bdb5af))
+* Shared renovate config [skip ci] ([bfd6729](https://github.com/autonomouslogic/jackson-object-stream/commit/bfd6729cf43f9035a7b22a5fea68b7ba9a0b179e))
+
 ## [0.2.11](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.10...0.2.11) (2022-08-09)
 
 
