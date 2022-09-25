@@ -7,7 +7,6 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.io.SerializedString;
 import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.*;
 import java.nio.file.Path;
 
@@ -29,7 +28,8 @@ public class JacksonObjectStreamFactory {
 		return createReader(file, 8192, type);
 	}
 
-	public <T> JacksonObjectIterator<T> createReader(File file, int bufferSize, Class<T> type) throws IOException, JsonParseException {
+	public <T> JacksonObjectIterator<T> createReader(File file, int bufferSize, Class<T> type)
+			throws IOException, JsonParseException {
 		return createReader(new BufferedInputStream(new FileInputStream(file), bufferSize), type);
 	}
 
@@ -37,15 +37,18 @@ public class JacksonObjectStreamFactory {
 		return createReader(path.toFile(), type);
 	}
 
-	public <T> JacksonObjectIterator<T> createReader(Path path, int bufferSize, Class<T> type) throws IOException, JsonParseException {
+	public <T> JacksonObjectIterator<T> createReader(Path path, int bufferSize, Class<T> type)
+			throws IOException, JsonParseException {
 		return createReader(path.toFile(), bufferSize, type);
 	}
 
-	public <T> JacksonObjectIterator<T> createReader(InputStream in, Class<T> type) throws IOException, JsonParseException {
+	public <T> JacksonObjectIterator<T> createReader(InputStream in, Class<T> type)
+			throws IOException, JsonParseException {
 		return createReader(new InputStreamReader(in), type);
 	}
 
-	public <T> JacksonObjectIterator<T> createReader(Reader reader, Class<T> type) throws IOException, JsonParseException {
+	public <T> JacksonObjectIterator<T> createReader(Reader reader, Class<T> type)
+			throws IOException, JsonParseException {
 		JsonParser parser = createJsonParser(reader);
 		return createReader(parser, type);
 	}
@@ -93,5 +96,4 @@ public class JacksonObjectStreamFactory {
 		generator.setRootValueSeparator(NEWLINE_SEPARATOR);
 		return generator;
 	}
-
 }

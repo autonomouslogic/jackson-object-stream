@@ -2,7 +2,6 @@ package com.autonomouslogic.jacksonobjectstream;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.ObjectCodec;
-
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.Writer;

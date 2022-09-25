@@ -1,12 +1,11 @@
 package com.autonomouslogic.jacksonobjectstream;
 
+import static org.junit.Assert.*;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.NoSuchElementException;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.NoSuchElementException;
-
-import static org.junit.Assert.*;
 
 public class JacksonObjectIteratorTest {
 	JacksonObjectStreamFactory factory;
@@ -20,7 +19,8 @@ public class JacksonObjectIteratorTest {
 	public void shouldReadObjects() throws Exception {
 		for (String testFile : Util.testFiles) {
 			String fmsg = "file:" + testFile;
-			try (JacksonObjectIterator<TestObject> iterator = factory.createReader(Util.openTestFile(testFile), TestObject.class)) {
+			try (JacksonObjectIterator<TestObject> iterator =
+					factory.createReader(Util.openTestFile(testFile), TestObject.class)) {
 				assertNotNull(fmsg, iterator);
 				for (int i = 0; i < 4; i++) {
 					String imsg = fmsg + ",i:" + i;
@@ -33,8 +33,7 @@ public class JacksonObjectIteratorTest {
 				try {
 					iterator.next();
 					fail("No exception.");
-				}
-				catch (NoSuchElementException e) {
+				} catch (NoSuchElementException e) {
 					assertNotNull(e);
 				}
 			}
