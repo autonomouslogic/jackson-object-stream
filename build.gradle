@@ -1,12 +1,12 @@
 plugins {
-    id "java"
-    id "idea"
-    id "org.danilopianini.git-sensitive-semantic-versioning-gradle-plugin" version "0.3.18"
-    id "maven-publish"
-    id "signing"
-    id "io.github.gradle-nexus.publish-plugin" version "1.1.0"
-    id "jacoco"
-    id "com.diffplug.spotless" version "6.11.0"
+	id "java"
+	id "idea"
+	id "org.danilopianini.git-sensitive-semantic-versioning-gradle-plugin" version "0.3.18"
+	id "maven-publish"
+	id "signing"
+	id "io.github.gradle-nexus.publish-plugin" version "1.1.0"
+	id "jacoco"
+	id "com.diffplug.spotless" version "6.11.0"
 }
 
 group "com.autonomouslogic.jacksonobjectstream"
@@ -15,98 +15,98 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
-    mavenCentral()
+	mavenCentral()
 }
 
 dependencies {
-    implementation "com.fasterxml.jackson.core:jackson-databind:2.13.4"
+	implementation "com.fasterxml.jackson.core:jackson-databind:2.13.4"
 
-    testImplementation "junit:junit:4.13.2"
-    testImplementation "com.fasterxml.jackson.core:jackson-annotations:2.13.4"
-    testImplementation "com.google.guava:guava:31.1-jre"
+	testImplementation "junit:junit:4.13.2"
+	testImplementation "com.fasterxml.jackson.core:jackson-annotations:2.13.4"
+	testImplementation "com.google.guava:guava:31.1-jre"
 }
 
 test {
-    testLogging {
-        events = [ "FAILED", "PASSED", "SKIPPED" ]
-        showExceptions = true
-        exceptionFormat = "FULL"
-        showExceptions = true
-        showCauses = true
-        showStackTraces = true
-    }
+	testLogging {
+		events = [ "FAILED", "PASSED", "SKIPPED" ]
+		showExceptions = true
+		exceptionFormat = "FULL"
+		showExceptions = true
+		showCauses = true
+		showStackTraces = true
+	}
 }
 
 jacocoTestReport {
-    reports {
-        xml.enabled true
-        html.enabled true
-    }
+	reports {
+		xml.enabled true
+		html.enabled true
+	}
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = "sources"
-    from sourceSets.main.allSource
+	classifier = "sources"
+	from sourceSets.main.allSource
 }
 
 task javadocJar(type: Jar) {
-    classifier = "javadoc"
-    from javadoc
+	classifier = "javadoc"
+	from javadoc
 }
 
 java {
-    withJavadocJar()
-    withSourcesJar()
+	withJavadocJar()
+	withSourcesJar()
 }
 
 publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            pom {
-                name = "Jackson Object Stream"
-                description = "Simple streaming of JSON-encoded objects."
-                url = "https://bitbucket.org/autonomouslogic/jackson-object-stream"
-                licenses {
-                    license {
-                        name = "MIT-0"
-                        url = "https://spdx.org/licenses/MIT-0.html"
-                    }
-                }
-                developers {
-                    developer {
-                        id = "kennethjor"
-                        name = "Kenneth Jørgensen"
-                        email = "kenneth@autonomouslogic.com"
-                    }
-                }
-                scm {
-                    connection = "scm:git:git://bitbucket.org:autonomouslogic/jackson-object-stream.git"
-                    developerConnection = "scm:git:ssh://bitbucket.org:autonomouslogic/jackson-object-stream.git"
-                    url = "https://bitbucket.org/autonomouslogic/jackson-object-stream"
-                }
-            }
-            from(components.java)
-        }
-    }
+	publications {
+		mavenJava(MavenPublication) {
+			pom {
+				name = "Jackson Object Stream"
+				description = "Simple streaming of JSON-encoded objects."
+				url = "https://bitbucket.org/autonomouslogic/jackson-object-stream"
+				licenses {
+					license {
+						name = "MIT-0"
+						url = "https://spdx.org/licenses/MIT-0.html"
+					}
+				}
+				developers {
+					developer {
+						id = "kennethjor"
+						name = "Kenneth Jørgensen"
+						email = "kenneth@autonomouslogic.com"
+					}
+				}
+				scm {
+					connection = "scm:git:git://bitbucket.org:autonomouslogic/jackson-object-stream.git"
+					developerConnection = "scm:git:ssh://bitbucket.org:autonomouslogic/jackson-object-stream.git"
+					url = "https://bitbucket.org/autonomouslogic/jackson-object-stream"
+				}
+			}
+			from(components.java)
+		}
+	}
 }
 
 signing {
-    sign publishing.publications.mavenJava
+	sign publishing.publications.mavenJava
 }
 
 nexusPublishing {
-    repositories {
-        sonatype()
-    }
+	repositories {
+		sonatype()
+	}
 }
 
 spotless {
-    java {
-        palantirJavaFormat()
-        indentWithTabs()
-    }
+	java {
+		palantirJavaFormat()
+		indentWithTabs()
+	}
 
-    groovyGradle {
-        indentWithTabs()
-    }
+	groovyGradle {
+		indentWithTabs()
+	}
 }

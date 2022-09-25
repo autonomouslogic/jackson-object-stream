@@ -1,7 +1,6 @@
 package com.autonomouslogic.jacksonobjectstream;
 
 import com.fasterxml.jackson.databind.MappingIterator;
-
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.Iterator;

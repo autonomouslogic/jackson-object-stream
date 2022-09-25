@@ -1,13 +1,12 @@
 package com.autonomouslogic.jacksonobjectstream;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.Before;
-import org.junit.Test;
-
-import java.io.ByteArrayOutputStream;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.ByteArrayOutputStream;
+import org.junit.Before;
+import org.junit.Test;
 
 public class JacksonObjectStreamFactoryTest {
 	JacksonObjectStreamFactory factory;
@@ -19,7 +18,8 @@ public class JacksonObjectStreamFactoryTest {
 
 	@Test
 	public void shouldCreateIteratorsFromClassSpec() throws Exception {
-		JacksonObjectIterator<TestObject> iterator = factory.createReader(Util.openTestFile(Util.testFiles[0]), TestObject.class);
+		JacksonObjectIterator<TestObject> iterator =
+				factory.createReader(Util.openTestFile(Util.testFiles[0]), TestObject.class);
 		assertNotNull(iterator);
 		TestObject obj = iterator.next();
 		assertNotNull(obj);

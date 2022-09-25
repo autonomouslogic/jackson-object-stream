@@ -9,8 +9,7 @@ public class TestObject {
 	@JsonProperty
 	public int a;
 
-	public TestObject() {
-	}
+	public TestObject() {}
 
 	public TestObject(int a) {
 		this.a = a;
