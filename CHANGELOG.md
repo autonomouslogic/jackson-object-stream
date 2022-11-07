@@ -1,5 +1,23 @@
 Jackson Object Stream
 
+## [0.2.13](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.12...0.2.13) (2022-11-07)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#15](https://github.com/autonomouslogic/jackson-object-stream/issues/15)) ([909b92e](https://github.com/autonomouslogic/jackson-object-stream/commit/909b92e1d29d582e92ccbdf1768030493f7058a6))
+
+
+### Styles
+
+* Spotless formatting ([#12](https://github.com/autonomouslogic/jackson-object-stream/issues/12)) ([c8b226b](https://github.com/autonomouslogic/jackson-object-stream/commit/c8b226b957af9ca692493cc00f6510a08a1376d0))
+
+
+### Miscellaneous Chores
+
+* **deps:** update amannn/action-semantic-pull-request action to v5 ([#14](https://github.com/autonomouslogic/jackson-object-stream/issues/14)) ([cbcea76](https://github.com/autonomouslogic/jackson-object-stream/commit/cbcea76826eae1fab6e6d7ee82f6e30a0fb4a2d8))
+* **deps:** update plugin org.danilopianini.git-sensitive-semantic-versioning-gradle-plugin to v0.3.19 ([#13](https://github.com/autonomouslogic/jackson-object-stream/issues/13)) ([eac7c7e](https://github.com/autonomouslogic/jackson-object-stream/commit/eac7c7e1cae2b0161f6c07c6869e342d6a4b5d90))
+
 ## [0.2.12](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.11...0.2.12) (2022-09-06)
 
 
