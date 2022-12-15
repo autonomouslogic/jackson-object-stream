@@ -58,7 +58,7 @@ try (JacksonObjectStreamWriter writer = factory.createWriter(new File("users.jso
 ```
 
 ## Doesn't Jackson support this already?
-Jackson does support writing JSON to files.
+Jackson does support writing/reading multiple JSON object to/from to files.
 This is a tiny library that simply provides the plumbing needed to do so effectively, and provides a few convenience
 methods at the same time.
 
