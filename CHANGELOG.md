@@ -1,5 +1,24 @@
 Jackson Object Stream
 
+## [0.2.14](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.13...0.2.14) (2023-02-06)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#20](https://github.com/autonomouslogic/jackson-object-stream/issues/20)) ([2acedd3](https://github.com/autonomouslogic/jackson-object-stream/commit/2acedd349c67288c37b51e6bfe39f396528a1634))
+
+
+### Documentation
+
+* Readme ([fd719c1](https://github.com/autonomouslogic/jackson-object-stream/commit/fd719c1b13022fd68f9cc04aef72c3b8aa83a9f5))
+
+
+### Miscellaneous Chores
+
+* **deps:** update all non-major dependencies ([#16](https://github.com/autonomouslogic/jackson-object-stream/issues/16)) ([81aa7c1](https://github.com/autonomouslogic/jackson-object-stream/commit/81aa7c1f9299d108e611017518d925cb3437345e))
+* **deps:** update plugin org.danilopianini.git-sensitive-semantic-versioning-gradle-plugin to v0.3.25 ([#18](https://github.com/autonomouslogic/jackson-object-stream/issues/18)) ([47d5c5b](https://github.com/autonomouslogic/jackson-object-stream/commit/47d5c5bacb4479498f0b2e58694024054f44633c))
+* **deps:** update plugin org.danilopianini.git-sensitive-semantic-versioning-gradle-plugin to v1 ([#19](https://github.com/autonomouslogic/jackson-object-stream/issues/19)) ([44d6531](https://github.com/autonomouslogic/jackson-object-stream/commit/44d65313032ae998abd4366673a48860ca0f74c8))
+
 ## [0.2.13](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.12...0.2.13) (2022-11-07)
 
 
