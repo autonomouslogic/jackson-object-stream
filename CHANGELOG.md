@@ -1,5 +1,18 @@
 Jackson Object Stream
 
+## [0.2.17](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.16...0.2.17) (2023-08-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.guava:guava to v32 ([#25](https://github.com/autonomouslogic/jackson-object-stream/issues/25)) ([3681830](https://github.com/autonomouslogic/jackson-object-stream/commit/36818302ef93b0e3087ab4a3f081130604a795cd))
+
+
+### Miscellaneous Chores
+
+* **deps:** update all non-major dependencies ([#27](https://github.com/autonomouslogic/jackson-object-stream/issues/27)) ([011c04a](https://github.com/autonomouslogic/jackson-object-stream/commit/011c04a95490e604b6f5d28a4f522bc42dab17bc))
+* **deps:** update plugin com.diffplug.spotless to v6.20.0 ([#28](https://github.com/autonomouslogic/jackson-object-stream/issues/28)) ([719c45a](https://github.com/autonomouslogic/jackson-object-stream/commit/719c45aa52db77fe770fdb3f6863edd114a5988a))
+
 ## [0.2.16](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.15...0.2.16) (2023-06-05)
 
 
