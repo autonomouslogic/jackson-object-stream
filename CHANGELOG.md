@@ -1,5 +1,20 @@
 Jackson Object Stream
 
+## [0.2.18](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.17...0.2.18) (2023-12-04)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#36](https://github.com/autonomouslogic/jackson-object-stream/issues/36)) ([f44ae41](https://github.com/autonomouslogic/jackson-object-stream/commit/f44ae41476a93e822f375838d2f437de1dc17372))
+
+
+### Miscellaneous Chores
+
+* **deps:** update all non-major dependencies ([#34](https://github.com/autonomouslogic/jackson-object-stream/issues/34)) ([4402413](https://github.com/autonomouslogic/jackson-object-stream/commit/44024130e3cf9f171081a2466a42c21589ef6fb4))
+* **deps:** update plugin com.diffplug.spotless to v6.21.0 ([#29](https://github.com/autonomouslogic/jackson-object-stream/issues/29)) ([216582f](https://github.com/autonomouslogic/jackson-object-stream/commit/216582f7f1ef0d26af721420120023708e3baaaf))
+* **deps:** update plugin com.diffplug.spotless to v6.22.0 ([#32](https://github.com/autonomouslogic/jackson-object-stream/issues/32)) ([64a45e4](https://github.com/autonomouslogic/jackson-object-stream/commit/64a45e422f1fa69e743961acf613ddebf8a4be16))
+* **deps:** update plugin com.diffplug.spotless to v6.23.3 ([#37](https://github.com/autonomouslogic/jackson-object-stream/issues/37)) ([7bf8795](https://github.com/autonomouslogic/jackson-object-stream/commit/7bf87959c6a2b16d99769ceca4827c9ec1da6719))
+
 ## [0.2.17](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.16...0.2.17) (2023-08-28)
 
 
