@@ -1,5 +1,19 @@
 Jackson Object Stream
 
+## [0.2.20](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.19...0.2.20) (2024-01-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.guava:guava to v33 ([#38](https://github.com/autonomouslogic/jackson-object-stream/issues/38)) ([45cc7d6](https://github.com/autonomouslogic/jackson-object-stream/commit/45cc7d6a4f1822690459c82e8ecdae3e315825ce))
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/checkout action to v4 ([#30](https://github.com/autonomouslogic/jackson-object-stream/issues/30)) ([3905976](https://github.com/autonomouslogic/jackson-object-stream/commit/3905976600a9a8a11b766334be9f78dab46bbb8c))
+* **deps:** update actions/setup-java action to v4 ([#35](https://github.com/autonomouslogic/jackson-object-stream/issues/35)) ([d963a2b](https://github.com/autonomouslogic/jackson-object-stream/commit/d963a2b3c45fee4455729b51c7780cb5576eb45f))
+* **deps:** update plugin org.danilopianini.git-sensitive-semantic-versioning-gradle-plugin to v2 ([#33](https://github.com/autonomouslogic/jackson-object-stream/issues/33)) ([79423ec](https://github.com/autonomouslogic/jackson-object-stream/commit/79423eca1c90fe8e76e348ffc5154d62d8652264))
+
 ## [0.2.19](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.18...0.2.19) (2024-01-01)
 
 
