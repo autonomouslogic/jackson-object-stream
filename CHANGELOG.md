@@ -1,5 +1,24 @@
 Jackson Object Stream
 
+## [0.2.21](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.20...0.2.21) (2024-05-06)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#48](https://github.com/autonomouslogic/jackson-object-stream/issues/48)) ([72754fe](https://github.com/autonomouslogic/jackson-object-stream/commit/72754fe83a31c3c51e9f5a8d4cd63504c73cda50))
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/cache action to v4 ([#40](https://github.com/autonomouslogic/jackson-object-stream/issues/40)) ([7dd8c31](https://github.com/autonomouslogic/jackson-object-stream/commit/7dd8c31739a53c0b793ebd2cd486aa376b2d9f7d))
+* **deps:** update all non-major dependencies ([#43](https://github.com/autonomouslogic/jackson-object-stream/issues/43)) ([3794a73](https://github.com/autonomouslogic/jackson-object-stream/commit/3794a738dfeaa7f40fffcb76f093876ae1cf382a))
+* **deps:** update all non-major dependencies ([#46](https://github.com/autonomouslogic/jackson-object-stream/issues/46)) ([7543a54](https://github.com/autonomouslogic/jackson-object-stream/commit/7543a542a3bbcfa4fb9318fe6f2702b5077f04ec))
+* **deps:** update codecov/codecov-action action to v4 [skip release] ([#42](https://github.com/autonomouslogic/jackson-object-stream/issues/42)) ([616c70e](https://github.com/autonomouslogic/jackson-object-stream/commit/616c70e20180a8b49b586f3da83f7953cb66b4b2))
+* **deps:** update dependency gradle to v7.6.4 ([#44](https://github.com/autonomouslogic/jackson-object-stream/issues/44)) ([55e82ac](https://github.com/autonomouslogic/jackson-object-stream/commit/55e82accf779382e83191025d29e8cba1e85d947))
+* **deps:** update dependency gradle to v8 [skip release] ([#21](https://github.com/autonomouslogic/jackson-object-stream/issues/21)) ([41cc2b2](https://github.com/autonomouslogic/jackson-object-stream/commit/41cc2b20fa2d89a675c1ad1180fd3c0aaa1b8abb))
+* **deps:** update plugin org.danilopianini.git-sensitive-semantic-versioning-gradle-plugin to v3 ([#41](https://github.com/autonomouslogic/jackson-object-stream/issues/41)) ([0454eae](https://github.com/autonomouslogic/jackson-object-stream/commit/0454eae2b586dd1f9d81d431f1639749c49d0f17))
+* **deps:** update plugin org.danilopianini.git-sensitive-semantic-versioning-gradle-plugin to v3.1.2 ([#45](https://github.com/autonomouslogic/jackson-object-stream/issues/45)) ([c29bef6](https://github.com/autonomouslogic/jackson-object-stream/commit/c29bef6771fdb03d7268b019112c5b73f0d422a9))
+
 ## [0.2.20](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.19...0.2.20) (2024-01-02)
 
 
