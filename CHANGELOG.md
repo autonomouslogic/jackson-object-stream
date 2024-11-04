@@ -1,5 +1,21 @@
 Jackson Object Stream
 
+## [0.2.22](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.21...0.2.22) (2024-11-04)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies to v2.18.1 ([#53](https://github.com/autonomouslogic/jackson-object-stream/issues/53)) ([ebfec78](https://github.com/autonomouslogic/jackson-object-stream/commit/ebfec78acaf524585f206f1a972566802e55ce5a))
+
+
+### Miscellaneous Chores
+
+* **deps:** update all non-major dependencies ([#49](https://github.com/autonomouslogic/jackson-object-stream/issues/49)) ([ce9e6c3](https://github.com/autonomouslogic/jackson-object-stream/commit/ce9e6c3cc05f306e7249049eea165b4b712f605d))
+* **deps:** update all non-major dependencies ([#50](https://github.com/autonomouslogic/jackson-object-stream/issues/50)) ([1f8ab81](https://github.com/autonomouslogic/jackson-object-stream/commit/1f8ab815b8d6e80c588ae1203fb3349676bd237e))
+* **deps:** update all non-major dependencies ([#51](https://github.com/autonomouslogic/jackson-object-stream/issues/51)) ([a807bec](https://github.com/autonomouslogic/jackson-object-stream/commit/a807bec44c30bb44908f1af2c5f9cb8e3f222eb3))
+* **deps:** update all non-major dependencies ([#52](https://github.com/autonomouslogic/jackson-object-stream/issues/52)) ([bb8282d](https://github.com/autonomouslogic/jackson-object-stream/commit/bb8282d00793bfbb2e716b391796e5df6358439a))
+* **deps:** update plugin io.github.gradle-nexus.publish-plugin to v2 ([#47](https://github.com/autonomouslogic/jackson-object-stream/issues/47)) ([786695f](https://github.com/autonomouslogic/jackson-object-stream/commit/786695f01b7411068cc3b3920652d6c7ebef6a2c))
+
 ## [0.2.21](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.20...0.2.21) (2024-05-06)
 
 
