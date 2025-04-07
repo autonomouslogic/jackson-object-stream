@@ -1,5 +1,12 @@
 Jackson Object Stream
 
+## [0.2.25](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.24...0.2.25) (2025-04-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.guava:guava to v33.4.6-jre ([#61](https://github.com/autonomouslogic/jackson-object-stream/issues/61)) ([1fc6971](https://github.com/autonomouslogic/jackson-object-stream/commit/1fc6971094f15ebb24aed639446e6f4b60f9f0d3))
+
 ## [0.2.24](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.23...0.2.24) (2025-03-03)
 
 
