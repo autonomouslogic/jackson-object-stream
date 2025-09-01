@@ -1,5 +1,12 @@
 Jackson Object Stream
 
+## [0.2.29](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.28...0.2.29) (2025-09-01)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#73](https://github.com/autonomouslogic/jackson-object-stream/issues/73)) ([4131092](https://github.com/autonomouslogic/jackson-object-stream/commit/41310922cbe392da64842a9680986720ba899d56))
+
 ## [0.2.28](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.27...0.2.28) (2025-08-04)
 
 
