@@ -1,5 +1,12 @@
 Jackson Object Stream
 
+## [0.2.31](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.30...0.2.31) (2025-11-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.fasterxml.jackson.core:jackson-databind to v2.20.1 ([#76](https://github.com/autonomouslogic/jackson-object-stream/issues/76)) ([364cc3f](https://github.com/autonomouslogic/jackson-object-stream/commit/364cc3fc8768946029affbdbd1daa4e443ade258))
+
 ## [0.2.30](https://github.com/autonomouslogic/jackson-object-stream/compare/0.2.29...0.2.30) (2025-10-06)
 
 
